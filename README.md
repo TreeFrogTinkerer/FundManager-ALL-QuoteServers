@@ -7,8 +7,8 @@ This script auto-runs in github on the 21st of each month to combine the CPI and
 Download the combined FM-CombinedCustomQuoteServer.csv from this repo.
 
 Consult the other repos for ticker usage:
-[I Bond Quote Server](https://github.com/TreeFrogTinkerer/FundManager-QuoteServer-IBonds)
-[US CPI Quote Server](https://github.com/TreeFrogTinkerer/FundManager-QuoteServer-US-CPI)
+* [I Bond Quote Server](https://github.com/TreeFrogTinkerer/FundManager-QuoteServer-IBonds)
+* [US CPI Quote Server](https://github.com/TreeFrogTinkerer/FundManager-QuoteServer-US-CPI)
 
 # Scheduling
 Edit the sccheduled task in the I Bond repo to download on the 22st of every month and change to the csv path in this repo.
