@@ -11,4 +11,6 @@ Consult the other repos for ticker usage:
 * [US CPI Quote Server](https://github.com/TreeFrogTinkerer/FundManager-QuoteServer-US-CPI)
 
 # Scheduling
-Edit the sccheduled task in the I Bond repo to download on the 22st of every month and change to the csv path in this repo.
+Import the TreeFrogTinkererALL-FMPriceDownload.xml into Task Scheduler in Windows.  It is set to run every month on the 22nd and on May & Nov 5th to get IBonds data a wee bit faster.
+
+See the notes on the IBond page about starting folder ie where to download the file too
