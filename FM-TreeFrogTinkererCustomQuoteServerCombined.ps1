@@ -11,10 +11,10 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/TreeFrogTinkerer/FundM
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/TreeFrogTinkerer/FundManager-QuoteServer-US-CPI/refs/heads/main/CPIFM-BLS.csv" -OutFile "CPIFM-BLS.csv"
 
 sleep 1
-$ibondcsv = Import-Csv "IbondFM-QuoteServer.csv" 
-#Get-Content -Path "IbondFM-QuoteServer.csv" | Select-Object -Skip 1 | ConvertFrom-Csv 
-$cpicsv = Import-Csv "CPIFM-BLS.csv"
-     
-$cpicsv | Export-Csv -Path "FM-CombinedCustomQuoteServer.csv" -NoTypeInformation
-$ibondcsv | Export-CSV -Path "FM-CombinedCustomQuoteServer.csv" -NoTypeInformation -Append
+$cpicsv = Get-Content "CPIFM-BLS.csv"
+$ibondcsv = Get-Content -Path "IbondFM-QuoteServer.csv" | Select-Object -Skip 1
+
+
+$cpicsv -join "`r`n" | Out-File -FilePath "FM-CombinedCustomQuoteServer.csv" -Encoding UTF8
+$ibondcsv -join "`r`n" | Out-File -FilePath "FM-CombinedCustomQuoteServer.csv" -Encoding UTF8 -Append
 Remove-Item -Path "CPIFM-BLS.csv", "IbondFM-QuoteServer.csv"
